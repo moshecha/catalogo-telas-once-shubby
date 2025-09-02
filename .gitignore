@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de entorno
+.env
+
+# PM2 o procesos locales
+pids/
+*.pid
+*.seed
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de build o dist (si generas JS compilado)
+dist/
+build/
+
+# Cobertura de tests
+coverage/
+
+# Otros
+.vscode/
+.idea/
