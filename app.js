@@ -21,6 +21,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const app = express();
 const PORT = process.env.PORT || process.env.APP_PORT || 3000;
 
+// hooooo
 // --- MIDDLEWARES ---
 app.use(cors());
 app.use(express.json());
