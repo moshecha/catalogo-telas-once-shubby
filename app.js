@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 
 // --- STATIC FILES ---
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -113,6 +113,9 @@ app.post('/productos', upload.array('imagenes', 5), async (req, res) => {
 // Rutas
 const rutasMain = require('./src/routes/mainRoutes');
 app.use('/', rutasMain);
+
+const rutasImages = require('./src/routes/imagesRoutes');
+app.use('/images', rutasImages);
 
 
   server.listen(PORT, () => {
