@@ -1,3 +1,5 @@
+// webhook.js en raiz
+
 require('dotenv').config();
 const express = require('express');
 const crypto = require('crypto');
@@ -5,8 +7,8 @@ const { exec } = require('child_process');
 
 const app = express();
 const SECRET = process.env.WEBHOOK_SECRET;
-const PROJECT_DIR = "/var/www/catalogo-telas-once-shubby";
-const PM2_NAME = "catalogo-telas-once-shubby";
+const PROJECT_DIR = process.env.PROJECT_DIR;
+const PM2_NAME = process.env.PM2_NAME;
 
 // Necesitamos el cuerpo RAW para verificar la firma correctamente
 app.use(express.json({
@@ -49,5 +51,5 @@ app.post('/webhook', (req, res) => {
   res.status(200).send('OK');
 });
 
-const PORT = process.env.WEBHOOK_PORT || 3000;
+const PORT = process.env.WEBHOOK_PORT || 3001;
 app.listen(PORT, () => console.log(`Webhook escuchando en puerto ${PORT}`));

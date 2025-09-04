@@ -19,7 +19,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 // --- CONFIGURACIÓN BÁSICA ---
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || process.env.APP_PORT || 3000;
 
 // --- MIDDLEWARES ---
 app.use(cors());
